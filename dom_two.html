@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(lang){
+        const li = document.createElement('li')
+        li.innerHTML = `${lang}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+
+    addLang('React')
+    addLang('Typescript')
+
+    function addOptimizeLang (lang) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptimizeLang("Java")
+
+    // Edit
+
+    const seconLang = document.querySelector('li:nth-child(2)')
+    // seconLang.innerHTML = "Hooks"   note: Its not optimize thats why we are using other option
+    const newLi = document.createElement('li')
+    newLi.textContent = "Hooks"
+    seconLang.replaceWith(newLi)
+    
+    const thirdLi = document.querySelector('li:first-child')
+    thirdLi.outerHTML = '<li>Tesing</li>'
+
+    // Remove
+
+    const LastLang = document.querySelector('li:last-child')
+    LastLang.remove()
+
+</script>
+</html>
