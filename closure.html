@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+    //  Lexical scope
+
+    function outer(){
+        var username = "amruta"
+        // console.log("OUTER", secret);  // here also you cannot access
+        function inner(){
+            console.log("inner",username);
+            // console.log("secret",secret);  // you cannot access this variable here
+        }
+
+        function innerTwo(){
+            let secret = "123fdte"
+            console.log("innerTwo",username);
+        }
+
+        inner()
+        innerTwo()
+    }
+
+    outer()
+    // console.log("Too Outer", username); //you cannot access username here
+</script>
+
+<script>
+    document.getElementById('orange').onclick = function(){
+        document.body.style.backgroundColor = "orange"
+    }
+
+    document.getElementById('green').onclick = function(){
+        document.body.style.backgroundColor = "green"
+    }
+
+    // what happen if you have 200 buttons ok lets check
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    // call clickHandler function
+
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+
+    // but it will show only green button not orange 
+
+</script>
+
+</html>
