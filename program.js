@@ -70,5 +70,14 @@ function sum(a){
 console.log(sum(2)(3)(2))
 
 
+// text = "abc" count = 7 output = "abcabca"
+
+function getStr(text, count){
+    return text.repeat(count/3)+text.substring(0, count%3)
+}
+
+console.log(getStr('abc', 6))
+
+
 
 
