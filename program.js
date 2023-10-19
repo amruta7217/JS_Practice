@@ -78,6 +78,37 @@ function getStr(text, count){
 
 console.log(getStr('abc', 6))
 
+// Flatten Object: Expected output ---->> 1,2,3,4,5
+
+let tree = {
+    value: 1,
+    children: [{
+        value: 2,
+        children: [{
+          value: 3
+        }]
+      },
+      {
+        value: 4,
+        children: [{
+          value: 5
+        }]
+      }
+    ]
+  };
+  
+  function getTreeValues(node) {
+      console.log(node.value)
+    if(node.children){
+        for(const i of node.children){
+          getTreeValues(i)
+      }
+    }
+  }
+  
+  getTreeValues(tree) 
+ 
+
 
 
 
