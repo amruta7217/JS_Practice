@@ -107,6 +107,121 @@ let tree = {
   }
   
   getTreeValues(tree) 
+
+// I want this type of output  {19: ['aaa', 'ccc'], 20: ['bbb', 'ddd']}
+
+  const arr1 = [
+    {name: 'aaa', age: 19},
+    {name: 'bbb', age: 20},
+    {name: 'ccc', age: 19},
+    {name: 'ddd', age: 20}
+  ]
+
+  const output = arr1.reduce((result, current) => {
+    const { age, name } = current;
+    if (!result[age]) {
+        result[age] = [];
+    }
+    result[age].push(name);
+    return result;
+}, {});
+
+console.log(output)
+
+
+// Want output like this {a: 2,m: 1,r: 1,t: 1,u: 1}
+
+const str2 = "amruta"
+const charCount = {}
+
+function getCount(str){
+	for(let i=0; i<str.length;i++){
+		const char = str[i]
+    charCount[char] = (charCount[char] || 0) + 1
+  }
+  return charCount
+}
+
+console.log(getCount(str2))
+
+// string reverse  India is my country -----> "aidnI si ym yrtnuoc"
+
+
+let str3 = "India is my country"
+
+function reverseWord(str){
+  
+  const words = str.split(' ')
+  
+  const finalWord = words.map((word) =>
+  	word.split('').reverse().join('')
+  )
+  
+  const finalStr = finalWord.join(' ')
+  console.log(finalStr)
+}
+
+reverseWord(str)
+
+// write code for this
+
+const calc = {
+  total: 0,
+  add(a) {
+    this.total += a
+    return this 
+  },
+  multiply(b) {
+    this.total *= b
+    return this 
+  },
+  substract(c) {
+    this.total -= a
+    return this 
+  }
+}
+
+const result = calc.add(10).multiply(5).substract(30).add(10)
+console.log(result.total)
+
+
+// Polyfill for map
+
+Array.prototype.myMap = function(cb){
+  let temp = []
+
+  for(let i =0;i<this.length;i++){
+    temp.push(cb(this[i]))
+  }
+  return temp
+}
+
+const nums1 = [1,2,3,4]
+
+const multiplyThree1 = nums.myMap((num) => {
+  return num * 3
+})
+
+console.log(multiplyThree1)
+
+// Polyfill for filter
+
+Array.prototype.myFilter = function(cb){
+  let temp = []
+
+  for(let i =0;i<this.length;i++){
+  if(cb(this[i])) temp.push(this[i])
+  }
+  return temp
+} 
+
+const nums = [1,2,3,4]
+
+const multiplyThree = nums.myFilter((num) => {
+  return num > 2
+})
+
+console.log(multiplyThree)
  
 
 
