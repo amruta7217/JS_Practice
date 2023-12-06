@@ -16,6 +16,14 @@ function duplicate(arr){
     return arr.filter((val, index) => arr.indexOf(val) !== index ) 
 }
 
+// Find duplicates in both array
+const arr = [1,2,3,4]
+const arr1 = [1,3,6,7]
+
+const final = arr.filter((i) => arr1.includes(i))
+
+console.log(final)
+
 // flatten array
 
 const flatArr = [1,2,3,[4,5,[6]],7]
