@@ -230,6 +230,23 @@ const multiplyThree = nums.myFilter((num) => {
 })
 
 console.log(multiplyThree)
+
+
+//Given a string, remove adjacent duplicates only, preserving the case and position in the result.
+ 
+function removeAdjacentDuplicates (str) {
+let data = str[0]
+
+for(let i=1;i<str.length;i++){
+	if(str[i].toLowerCase() !== str[i-1].toLowerCase()){
+  	data+= str[i]
+  }
+}
+return data
+}
+const input = "aAaBbCCcBBXxYXYZzz";
+const output = "aBCBXYXYZ";
+console.log(removeAdjacentDuplicates(input) === output);
  
 
 
