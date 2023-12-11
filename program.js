@@ -249,6 +249,25 @@ const output = "aBCBXYXYZ";
 console.log(removeAdjacentDuplicates(input) === output);
  
 
+// Find 2 numbers which adition is 6 with there indexes
+
+const arr = [1,2,3,4,5,6]
+const target = 6
+
+function getSum(arr, target){
+const newArr = []
+	for(let x in arr){
+  	for(let y in arr){
+    	if(arr[x] + arr[y] === target){
+      	newArr.push(`number with index: ${x} ${y}  === ${[arr[x], arr[y]]}`)
+      }
+    }
+  }
+  
+  return newArr
+}
+
+console.log(getSum(arr,target))
 
 
 
