@@ -269,5 +269,16 @@ const newArr = []
 
 console.log(getSum(arr,target))
 
+// Factorial Number using recursive method
+
+function factRecursive(n){
+	if(n === 0 || n === 1){
+  	return 1
+  }else{
+  	return n * factRecursive(n-1)
+  }
+ }
+ 
+ console.log(factRecursive(4))
 
 
